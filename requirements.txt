@@ -1,0 +1,9 @@
+torch
+torchvision
+transformers
+gradio>=4.0.0
+reportlab
+pillow
+pandas
+numpy
+huggingface_hub

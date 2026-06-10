@@ -1,0 +1,21 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Diagnostic / Output files
+outputs/*.pdf
+reports/*.json
+
+# Keep folders in git but empty their contents
+!reports/.gitkeep
+!outputs/.gitkeep
