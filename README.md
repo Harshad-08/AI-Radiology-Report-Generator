@@ -20,9 +20,10 @@ This application is strictly focused on **Chest X-Rays** and implements a multi-
 * **Chest X-Ray Image Upload & Visualizer**: Support for PNG, JPG, and JPEG files.
 * **Intelligent Clinical Validator**: Automatically checks image integrity, grayscale saturation levels, aspect ratios, and quadrant brightness profiles to ensure only Chest X-rays are processed.
 * **Multimodal Local VLM Inference**:
-  1. Primary: Fine-tuned chest X-ray VLM (`umarigan/blip-image-captioning-base-chestxray-finetuned`).
-  2. Fallback: Salesforce BLIP base VLM (`Salesforce/blip-image-captioning-base`).
-  3. Offline/OOM Fallback: Highly sophisticated, local pixel-characteristic rules engine.
+  1. **Primary VLM (MedBLIP)**: Tries to load MedBLIP architectures (e.g. `unni12345/MedBlip2` or `loopback-kr/Ours-MedBLIP-ep3-batch2-len1024`).
+  2. **Secondary VLM (Chest-Radiology Fine-tuned)**: Tries fine-tuned chest X-ray captioning models (e.g. `umarigan/blip-image-captioning-base-chestxray-finetuned` or `adibvafa/BLIP-MIMIC-CXR`).
+  3. **VLM Fallback**: Salesforce BLIP base VLM (`Salesforce/blip-image-captioning-base`).
+  4. **Offline/OOM Fallback**: Highly sophisticated, local pixel-characteristic clinical rules engine.
 * **Structured Clinical Report Generation**: Outputs reports strictly adhering to medical standards:
   * **FINDINGS**: Text describing organ system states (lungs, heart, bony structure).
   * **IMPRESSION**: Summary of pathology (e.g., Pneumonia, Cardiomegaly, Atelectasis, normal).
